@@ -7,7 +7,7 @@ if(!isset($_SESSION['admin'])){
 include 'config.inc.php';
 
 // Consulta sem o campo 'nome_animal'
-$stmt = $pdo->query("SELECT id, nome, email, assunto, mensagem, data_envio
+$stmt = $pdo->query("SELECT id, nome, email, telefone, assunto, mensagem, data_envio
                      FROM candidatos_adocao
                      ORDER BY data_envio DESC");
 $envios = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -37,6 +37,7 @@ $envios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <th>ID</th>
             <th>Nome</th>
             <th>Email</th>
+            <th>Telefone</th>
             <th>Assunto</th>
             <th>Mensagem</th>
             <th>Data</th>
@@ -48,6 +49,7 @@ $envios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?= htmlspecialchars($f['id']) ?></td>
             <td><?= htmlspecialchars($f['nome']) ?></td>
             <td><?= htmlspecialchars($f['email']) ?></td>
+            <td><?= htmlspecialchars($f['telefone']) ?></td>
             <td><?= htmlspecialchars($f['assunto']) ?></td>
             <td><?= htmlspecialchars($f['mensagem']) ?></td>
             <td><?= htmlspecialchars($f['data_envio']) ?></td>

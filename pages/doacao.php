@@ -74,28 +74,6 @@
 <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
 
 <?php include('../includes/menu.php'); ?>
-
-<!-- ============================= -->
-<!-- 🎨 FUNDO EM DUAS CORES (AZUL → ROXO) -->
-<!-- ============================= -->
-<section class="w-full py-20 lg:py-32">
-<div class="mx-auto max-w-6xl px-4">
-    <div class="flex min-h-[400px] flex-col gap-6 items-center justify-center rounded-xl p-8 text-center bg-gradient-to-r from-primary to-secondary">
-        <div class="flex flex-col gap-2">
-            <h1 class="text-white text-4xl md:text-6xl font-black tracking-tighter">Doe & Ajude</h1>
-            <h2 class="text-white/90 text-base md:text-lg font-normal max-w-2xl mx-auto">
-                Sua doação transforma a vida de um animal necessitado. Juntos, podemos oferecer cuidado, amor e um final feliz.
-            </h2>
-        </div>
-       <a href="https://instagram.com/peludosunipe" target="_blank"
-   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-secondary text-white text-base font-bold shadow-lg hover:bg-secondary/90 transition-colors duration-300">
-    <span class="truncate">Quero ajudar agora</span>
-</a>
-
-    </div>
-</div>
-</section>
-
 <!-- ============================= -->
 <!-- COMO AJUDAR -->
 <!-- ============================= -->

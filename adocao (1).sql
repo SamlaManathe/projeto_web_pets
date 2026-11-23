@@ -91,6 +91,7 @@ CREATE TABLE `candidatos_adocao` (
   `id` int(11) NOT NULL,
   `nome` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
   `assunto` varchar(255) DEFAULT NULL,
   `mensagem` text NOT NULL,
   `id_animal` int(11) DEFAULT NULL,

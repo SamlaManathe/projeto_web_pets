@@ -417,6 +417,9 @@ if (isset($_GET['adotar']) && is_numeric($_GET['adotar']) && isset($_GET['nome']
         <input id="email" name="email" type="email" placeholder="Seu email" required
             class="p-3 border border-orange-400 rounded-lg focus:ring-orange-500 focus:border-orange-500 transition-all">
 
+        <input id="telefone" name="telefone" type="tel" placeholder="Seu telefone" pattern="[0-9\s()+-]{10,20}" title="Informe um telefone válido" required
+            class="p-3 border border-orange-400 rounded-lg focus:ring-orange-500 focus:border-orange-500 transition-all">
+
         <input id="subject" name="assunto" type="text" 
             placeholder="Assunto(não esqueça de mencionar o peludo que deseja!)"
             value="<?= $animal_nome ? 'Candidato à adoção: ' . $animal_nome : '' ?>"
