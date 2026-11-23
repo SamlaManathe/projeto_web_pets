@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Coleta dos campos usando filter_input para sanitização
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_SPECIAL_CHARS);
     $assunto = filter_input(INPUT_POST, 'assunto', FILTER_SANITIZE_SPECIAL_CHARS);
     $mensagem = filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     
@@ -26,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // --------------------------------------------------------
     // VALIDAÇÃO BÁSICA
     // --------------------------------------------------------
-    if (!$nome || !$email || !$mensagem) {
+    if (!$nome || !$email || !$telefone || !$mensagem) {
         // Redireciona de volta com erro se campos essenciais faltarem
         // CORREÇÃO: Redireciona para index.php
         header("Location: index.php?status=erro&msg=Preencha todos os campos obrigatórios.#contato");
@@ -41,14 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // ========================================================================
     try {
         // Comando SQL para inserção com placeholders (prevenção de SQL Injection)
-        $sql = "INSERT INTO candidatos_adocao (nome, email, assunto, mensagem, id_animal) 
-                 VALUES (:nome, :email, :assunto, :mensagem, :id_animal)";
+        $sql = "INSERT INTO candidatos_adocao (nome, email, telefone, assunto, mensagem, id_animal) 
+                 VALUES (:nome, :email, :telefone, :assunto, :mensagem, :id_animal)";
                 
         $stmt = $pdo->prepare($sql);
         
         // Associação dos valores aos placeholders
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':telefone', $telefone);
         $stmt->bindParam(':assunto', $assunto);
         $stmt->bindParam(':mensagem', $mensagem);
         
